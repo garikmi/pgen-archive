@@ -5,15 +5,15 @@ import (
 	"fmt"
 )
 
-// version is app version number
+// version is pgen version number
 const version = "0.0.2"
 
-// config holds app configuration settings
+// config holds pgen configuration settings
 type config struct {
 	kind string
 }
 
-// application holds app data
+// application holds pgen data
 type application struct {
 	config  config
 	version string
