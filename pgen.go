@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/garikmi/pgen/cmd/internal/helpers"
+	"github.com/garikmi/pgen/internal/helpers"
 	"log"
 	"math/rand"
 	"regexp"
