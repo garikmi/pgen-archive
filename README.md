@@ -3,7 +3,7 @@
     % pgen
     yo5-scriar0-SCHIAST
 
-    % pgen -kind=random
+    % pgen random
     Qnoa6b1bU1kK
 
 # Installation
