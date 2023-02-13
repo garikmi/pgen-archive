@@ -1,8 +1,8 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"os"
 )
 
 // version is pgen version number
@@ -23,11 +23,16 @@ func main() {
 	// application configuration
 	var cfg config
 
-	// command line arguments
-	flag.StringVar(&cfg.kind, "kind", "word", "Kind of password {word|random}")
-
-	// parse command line arguments
-	flag.Parse()
+	// check if two arguments were provided
+	if len(os.Args) > 2 {
+		fmt.Println("Please enter valid arguments.")
+		printArgs()
+		return
+	} else if len(os.Args) == 1 {
+		cfg.kind = "word"
+	} else {
+		cfg.kind = os.Args[1]
+	}
 
 	// configure application
 	app := &application{
@@ -43,6 +48,16 @@ func main() {
 		fmt.Println(app.generateRandom())
 	default:
 		fmt.Println("Please enter valid arguments.")
-		flag.PrintDefaults()
+		printArgs()
 	}
+}
+
+// printArgs prints all the acceptable arguments
+func printArgs() {
+	fmt.Println("Usage:")
+	fmt.Println("        go <command>")
+
+	fmt.Println("\nThe commands are:")
+	fmt.Println("        word      non-existent words (default)")
+	fmt.Println("        random    random characters")
 }
