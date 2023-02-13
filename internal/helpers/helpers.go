@@ -11,9 +11,5 @@ func IsTrue() bool {
 	r1 := rand.New(s1)
 
 	res := r1.Intn(2)
-	if res == 1 {
-		return true
-	} else {
-		return false
-	}
+	return res == 1
 }

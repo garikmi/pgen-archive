@@ -46,8 +46,11 @@ func main() {
 		fmt.Println(app.generateWord())
 	case "random":
 		fmt.Println(app.generateRandom())
+	case "help":
+		fmt.Println("Pgen is a tool for generating passwords.\n")
+		printArgs()
 	default:
-		fmt.Println("Please enter valid arguments.")
+		fmt.Println(fmt.Sprintf("%s %s: unknown command", os.Args[0], os.Args[1]), "\n")
 		printArgs()
 	}
 }
