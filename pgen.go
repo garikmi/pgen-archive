@@ -84,3 +84,18 @@ func (app *application) generateRandom() string {
 
 	return result
 }
+
+// generatePIN generates a four digit pin-code
+func (app *application) generatePIN() string {
+	var result string
+
+	// random generator
+	s1 := rand.NewSource(time.Now().UnixNano())
+	r1 := rand.New(s1)
+
+	for i := 1; i <= 4; i++ {
+		result += strconv.Itoa(r1.Intn(9))
+	}
+
+	return result
+}

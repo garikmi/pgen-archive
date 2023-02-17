@@ -46,6 +46,8 @@ func main() {
 		fmt.Println(app.generateWord())
 	case "random":
 		fmt.Println(app.generateRandom())
+	case "pin":
+		fmt.Println(app.generatePIN())
 	case "help":
 		fmt.Println("Pgen is a tool for generating passwords.\n")
 		printArgs()
@@ -63,4 +65,5 @@ func printArgs() {
 	fmt.Println("\nThe commands are:")
 	fmt.Println("        word      non-existent words (default)")
 	fmt.Println("        random    random characters")
+	fmt.Println("        pin       four digit pin-code")
 }
